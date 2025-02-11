@@ -39,7 +39,7 @@ class XMLTVClient:
             response = await self._session.get(url=self._url)
             response.raise_for_status()
 
-            if response.content_type in ["text/xml", "application/xml"]:
+            if response.content_type in ["text/xml", "application/xml", "application/force-download"]:
                 # raw XML text, read as-is
                 data = await response.text()
 
